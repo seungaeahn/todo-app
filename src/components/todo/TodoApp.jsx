@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LogoutComponent from "./LogoutComponent";
 import HeaderComponent from "./HeaderComponent";
 import ListTodosComponent from "./ListTodosComponent";
+import TodoComponent from "./TodoComponent";
 import ErrorComponent from "./ErrorComponent";
 import WelcomeComponent from "./WelcomeComponent";
 import LoginComponent from "./LoginComponent";
@@ -41,6 +42,15 @@ export default function TodoApp() {
               element={
                 <AuthenticatedRoute>
                   <ListTodosComponent />
+                </AuthenticatedRoute>
+              }
+            />
+
+            <Route
+              path="/todo/:id"
+              element={
+                <AuthenticatedRoute>
+                  <TodoComponent />
                 </AuthenticatedRoute>
               }
             />
